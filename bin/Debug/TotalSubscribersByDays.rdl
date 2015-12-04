@@ -1,0 +1,632 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Total subscribers by days</Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>20pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>SteelBlue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Height>0.36in</Height>
+        <Width>3.98957in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Tablix Name="table1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.76167in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Date</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Subscribers count</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.335in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="accessing_date">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!accessing_date.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Format>d MMM yyyy</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>accessing_date</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="count">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!count.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Format>0;(0)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>count</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="table1_Details_Group">
+                <DataElementName>Detail</DataElementName>
+              </Group>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+              <DataElementName>Detail_Collection</DataElementName>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSetTotalSubsByDays</DataSetName>
+        <Top>1.07875in</Top>
+        <Height>1.09667in</Height>
+        <Width>2in</Width>
+        <ZIndex>1</ZIndex>
+        <Style />
+      </Tablix>
+      <Textbox Name="Textbox12">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Report period:</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox12</rd:DefaultName>
+        <Top>0.5925in</Top>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox13">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!StartDate.Value</Value>
+                <Style>
+                  <Format>d MMM yyyy</Format>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox13</rd:DefaultName>
+        <Top>0.5925in</Top>
+        <Left>1.01389in</Left>
+        <Height>0.25in</Height>
+        <Width>1.25in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox15">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>-</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox15</rd:DefaultName>
+        <Top>0.5925in</Top>
+        <Left>2.33333in</Left>
+        <Height>0.25in</Height>
+        <Width>0.08333in</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox16">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!EndDate.Value</Value>
+                <Style>
+                  <Format>d MMM yyyy</Format>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox16</rd:DefaultName>
+        <Top>0.5925in</Top>
+        <Left>2.48611in</Left>
+        <Height>0.25in</Height>
+        <Width>1.50347in</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>3.13375in</Height>
+    <Style />
+  </Body>
+  <Width>9.5625in</Width>
+  <Page>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DS_VLR">
+      <DataSourceReference>DS_VLR</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>cdaf8f18-18b0-4c62-90e7-fad24ebd69c3</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSetSubsByDays">
+      <Query>
+        <DataSourceName>DS_VLR</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select
+	t.accessing_date,
+	win.count win,
+	win.count - win_prev_day.count win_diff,
+	mtsr.count mtsr,
+	mtsr.count - mtsr_prev_day.count mtsr_diff,
+	mtsr_new.count mtsr_new,
+	mtsr_new.count - mtsr_new_prev_day.count mtsr_new_diff,
+	others.count others,
+	others.count - others_prev_day.count others_diff
+from
+(
+	select distinct accessing_date
+	from AGGR_PREFIX_BY_DAY
+) t 
+
+left join
+(
+	select accessing_date, sum(msisdn_count) count
+	from AGGR_PREFIX_BY_DAY
+	where msisdn_prefix in ('79789')
+	group by accessing_date
+) win
+on t.ACCESSING_DATE = win.ACCESSING_DATE
+
+left join
+(
+	select accessing_date, sum(msisdn_count) count
+	from AGGR_PREFIX_BY_DAY
+	where msisdn_prefix in ('79789')
+	group by accessing_date
+) win_prev_day
+on DATEADD(DAY, -1, t.ACCESSING_DATE) = win_prev_day.ACCESSING_DATE
+
+left join
+(
+	select accessing_date, sum(msisdn_count) count
+	from AGGR_PREFIX_BY_DAY
+	where msisdn_prefix in ('79780', '79787', '79788')
+	group by accessing_date
+) mtsr
+on t.ACCESSING_DATE = mtsr.ACCESSING_DATE
+
+left join
+(
+	select accessing_date, sum(msisdn_count) count
+	from AGGR_PREFIX_BY_DAY
+	where msisdn_prefix in ('79780', '79787', '79788')
+	group by accessing_date
+) mtsr_prev_day
+on DATEADD(DAY, -1, t.ACCESSING_DATE) = mtsr_prev_day.ACCESSING_DATE
+
+left join
+(
+	select accessing_date, sum(msisdn_count) count
+	from AGGR_PREFIX_BY_DAY
+	where msisdn_prefix in ('79781')
+	group by accessing_date
+) mtsr_new
+on t.ACCESSING_DATE = mtsr_new.ACCESSING_DATE
+
+left join
+(
+	select accessing_date, sum(msisdn_count) count
+	from AGGR_PREFIX_BY_DAY
+	where msisdn_prefix in ('79781')
+	group by accessing_date
+) mtsr_new_prev_day
+on DATEADD(DAY, -1, t.ACCESSING_DATE) = mtsr_new_prev_day.ACCESSING_DATE
+
+left join
+(
+	select accessing_date, sum(msisdn_count) count
+	from AGGR_PREFIX_BY_DAY
+	where msisdn_prefix not in ('79780', '79781', '79787', '79788', '79789')
+	group by accessing_date
+) others
+on t.ACCESSING_DATE = others.ACCESSING_DATE
+
+left join
+(
+	select accessing_date, sum(msisdn_count) count
+	from AGGR_PREFIX_BY_DAY
+	where msisdn_prefix not in ('79780', '79781', '79787', '79788', '79789')
+	group by accessing_date
+) others_prev_day
+on DATEADD(DAY, -1, t.ACCESSING_DATE) = others_prev_day.ACCESSING_DATE
+where
+	t.ACCESSING_DATE between cast(@StartDate as date) and cast(@EndDate as date)
+order by t.ACCESSING_DATE</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="accessing_date">
+          <DataField>accessing_date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="win">
+          <DataField>win</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="win_diff">
+          <DataField>win_diff</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="mtsr">
+          <DataField>mtsr</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="mtsr_diff">
+          <DataField>mtsr_diff</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="mtsr_new">
+          <DataField>mtsr_new</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="mtsr_new_diff">
+          <DataField>mtsr_new_diff</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="others">
+          <DataField>others</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="others_diff">
+          <DataField>others_diff</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DataSetStartDate">
+      <Query>
+        <DataSourceName>DS_VLR</DataSourceName>
+        <CommandText>SELECT        MIN(ACCESSING_DATE) AS accessing_date
+FROM            AGGR_PREFIX_BY_DAY</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="accessing_date">
+          <DataField>accessing_date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DataSetEndDate">
+      <Query>
+        <DataSourceName>DS_VLR</DataSourceName>
+        <CommandText>select max(accessing_date) as accessing_date
+from aggr_prefix_by_day</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="accessing_date">
+          <DataField>accessing_date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DataSetTotalSubsByDays">
+      <Query>
+        <DataSourceName>DS_VLR</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select 
+	t.accessing_date,
+	t.count
+from
+(
+	select cast(accessingtime as date) accessing_date, count(distinct msisdn) count
+	from vlr
+	group by cast(accessingtime as date)
+) t
+where
+	t.ACCESSING_DATE between cast(@StartDate as date) and cast(@EndDate as date)
+order by t.accessing_date
+</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="accessing_date">
+          <DataField>accessing_date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="count">
+          <DataField>count</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="StartDate">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>DataSetStartDate</DataSetName>
+          <ValueField>accessing_date</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Start date</Prompt>
+      <UsedInQuery>False</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="EndDate">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>DataSetEndDate</DataSetName>
+          <ValueField>accessing_date</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>End date</Prompt>
+      <UsedInQuery>False</UsedInQuery>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="win_logo">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAMgAAABsCAYAAAAv1f1mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAKT2lDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjanVNnVFPpFj333vRCS4iAlEtvUhUIIFJCi4AUkSYqIQkQSoghodkVUcERRUUEG8igiAOOjoCMFVEsDIoK2AfkIaKOg6OIisr74Xuja9a89+bN/rXXPues852zzwfACAyWSDNRNYAMqUIeEeCDx8TG4eQuQIEKJHAAEAizZCFz/SMBAPh+PDwrIsAHvgABeNMLCADATZvAMByH/w/qQplcAYCEAcB0kThLCIAUAEB6jkKmAEBGAYCdmCZTAKAEAGDLY2LjAFAtAGAnf+bTAICd+Jl7AQBblCEVAaCRACATZYhEAGg7AKzPVopFAFgwABRmS8Q5ANgtADBJV2ZIALC3AMDOEAuyAAgMADBRiIUpAAR7AGDIIyN4AISZABRG8lc88SuuEOcqAAB4mbI8uSQ5RYFbCC1xB1dXLh4ozkkXKxQ2YQJhmkAuwnmZGTKBNA/g88wAAKCRFRHgg/P9eM4Ors7ONo62Dl8t6r8G/yJiYuP+5c+rcEAAAOF0ftH+LC+zGoA7BoBt/qIl7gRoXgugdfeLZrIPQLUAoOnaV/Nw+H48PEWhkLnZ2eXk5NhKxEJbYcpXff5nwl/AV/1s+X48/Pf14L7iJIEyXYFHBPjgwsz0TKUcz5IJhGLc5o9H/LcL//wd0yLESWK5WCoU41EScY5EmozzMqUiiUKSKcUl0v9k4t8s+wM+3zUAsGo+AXuRLahdYwP2SycQWHTA4vcAAPK7b8HUKAgDgGiD4c93/+8//UegJQCAZkmScQAAXkQkLlTKsz/HCAAARKCBKrBBG/TBGCzABhzBBdzBC/xgNoRCJMTCQhBCCmSAHHJgKayCQiiGzbAdKmAv1EAdNMBRaIaTcA4uwlW4Dj1wD/phCJ7BKLyBCQRB
+yAgTYSHaiAFiilgjjggXmYX4IcFIBBKLJCDJiBRRIkuRNUgxUopUIFVIHfI9cgI5h1xGupE7yAAygvyGvEcxlIGyUT3UDLVDuag3GoRGogvQZHQxmo8WoJvQcrQaPYw2oefQq2gP2o8+Q8cwwOgYBzPEbDAuxsNCsTgsCZNjy7EirAyrxhqwVqwDu4n1Y8+xdwQSgUXACTYEd0IgYR5BSFhMWE7YSKggHCQ0EdoJNwkDhFHCJyKTqEu0JroR+cQYYjIxh1hILCPWEo8TLxB7iEPENyQSiUMyJ7mQAkmxpFTSEtJG0m5SI+ksqZs0SBojk8naZGuyBzmULCAryIXkneTD5DPkG+Qh8lsKnWJAcaT4U+IoUspqShnlEOU05QZlmDJBVaOaUt2ooVQRNY9aQq2htlKvUYeoEzR1mjnNgxZJS6WtopXTGmgXaPdpr+h0uhHdlR5Ol9BX0svpR+iX6AP0dwwNhhWDx4hnKBmbGAcYZxl3GK+YTKYZ04sZx1QwNzHrmOeZD5lvVVgqtip8FZHKCpVKlSaVGyovVKmqpqreqgtV81XLVI+pXlN9rkZVM1PjqQnUlqtVqp1Q61MbU2epO6iHqmeob1Q/pH5Z/YkGWcNMw09DpFGgsV/jvMYgC2MZs3gsIWsNq4Z1gTXEJrHN2Xx2KruY/R27iz2qqaE5QzNKM1ezUvOUZj8H45hx+Jx0TgnnKKeX836K3hTvKeIpG6Y0TLkxZVxrqpaXllirSKtRq0frvTau7aedpr1Fu1n7gQ5Bx0onXCdHZ4/OBZ3nU9lT3acKpxZNPTr1ri6qa6UbobtEd79up+6Ynr5egJ5Mb6feeb3n+hx9L/1U/W36p/VHDFgGswwkBtsMzhg8xTVxbzwdL8fb8VFDXcNAQ6VhlWGX4YSRudE8o9VGjUYPjGnGXOMk423GbcajJgYmISZLTepN7ppSTbmmKaY7TDtMx83MzaLN1pk1mz0x1zLnm+eb15vft2BaeFos
+tqi2uGVJsuRaplnutrxuhVo5WaVYVVpds0atna0l1rutu6cRp7lOk06rntZnw7Dxtsm2qbcZsOXYBtuutm22fWFnYhdnt8Wuw+6TvZN9un2N/T0HDYfZDqsdWh1+c7RyFDpWOt6azpzuP33F9JbpL2dYzxDP2DPjthPLKcRpnVOb00dnF2e5c4PziIuJS4LLLpc+Lpsbxt3IveRKdPVxXeF60vWdm7Obwu2o26/uNu5p7ofcn8w0nymeWTNz0MPIQ+BR5dE/C5+VMGvfrH5PQ0+BZ7XnIy9jL5FXrdewt6V3qvdh7xc+9j5yn+M+4zw33jLeWV/MN8C3yLfLT8Nvnl+F30N/I/9k/3r/0QCngCUBZwOJgUGBWwL7+Hp8Ib+OPzrbZfay2e1BjKC5QRVBj4KtguXBrSFoyOyQrSH355jOkc5pDoVQfujW0Adh5mGLw34MJ4WHhVeGP45wiFga0TGXNXfR3ENz30T6RJZE3ptnMU85ry1KNSo+qi5qPNo3ujS6P8YuZlnM1VidWElsSxw5LiquNm5svt/87fOH4p3iC+N7F5gvyF1weaHOwvSFpxapLhIsOpZATIhOOJTwQRAqqBaMJfITdyWOCnnCHcJnIi/RNtGI2ENcKh5O8kgqTXqS7JG8NXkkxTOlLOW5hCepkLxMDUzdmzqeFpp2IG0yPTq9MYOSkZBxQqohTZO2Z+pn5mZ2y6xlhbL+xW6Lty8elQfJa7OQrAVZLQq2QqboVFoo1yoHsmdlV2a/zYnKOZarnivN7cyzytuQN5zvn//tEsIS4ZK2pYZLVy0dWOa9rGo5sjxxedsK4xUFK4ZWBqw8uIq2Km3VT6vtV5eufr0mek1rgV7ByoLBtQFr6wtVCuWFfevc1+1dT1gvWd+1YfqGnRs+FYmKrhTbF5cVf9go3HjlG4dvyr+Z3JS0qavEuWTPZtJm6ebeLZ5bDpaql+aXDm4N2dq0Dd9WtO319kXbL5fNKNu7g7ZDuaO/
+PLi8ZafJzs07P1SkVPRU+lQ27tLdtWHX+G7R7ht7vPY07NXbW7z3/T7JvttVAVVN1WbVZftJ+7P3P66Jqun4lvttXa1ObXHtxwPSA/0HIw6217nU1R3SPVRSj9Yr60cOxx++/p3vdy0NNg1VjZzG4iNwRHnk6fcJ3/ceDTradox7rOEH0x92HWcdL2pCmvKaRptTmvtbYlu6T8w+0dbq3nr8R9sfD5w0PFl5SvNUyWna6YLTk2fyz4ydlZ19fi753GDborZ752PO32oPb++6EHTh0kX/i+c7vDvOXPK4dPKy2+UTV7hXmq86X23qdOo8/pPTT8e7nLuarrlca7nuer21e2b36RueN87d9L158Rb/1tWeOT3dvfN6b/fF9/XfFt1+cif9zsu72Xcn7q28T7xf9EDtQdlD3YfVP1v+3Njv3H9qwHeg89HcR/cGhYPP/pH1jw9DBY+Zj8uGDYbrnjg+OTniP3L96fynQ89kzyaeF/6i/suuFxYvfvjV69fO0ZjRoZfyl5O/bXyl/erA6xmv28bCxh6+yXgzMV70VvvtwXfcdx3vo98PT+R8IH8o/2j5sfVT0Kf7kxmTk/8EA5jz/GMzLdsAAAAgY0hSTQAAeiUAAICDAAD5/wAAgOkAAHUwAADqYAAAOpgAABdvkl/FRgAAEkBJREFUeNrsnXd8VFXax3/TJ5M26ZkkTHpvBAEBCYh0FFhQih/Xyrrua+9lX993191FX9F1FZXigg0UXWRXV7NG/UiQItIhJIEUEtJ7r9Puff+YzCQ3986kkAmT8Hz/gdx+zzm/85znOc+5I2JZlgVBEIKIqQgIggRCECQQgiCBEAQJhCBIIARBAiEIEghBkEAIggRCEAQJhCBIIARBAiEIEghBkEAIggRCECQQgiCBEAQJhCBIIARBkEAIggRCECQQghgrpCM56WJnD1KPXIRK4nz6YlnAxLK4NDcR/nIp1TAx9gKJc1ViXaAXdlU1OeVLPRrqR+Ig
+RgXRSL+sqGdY+O7PRruRcaoX8pVLUX9TMtUscXV9ELlYhM3xk5zuhXYmaalWCedw0u8J9kaim9JpXmaqpwor/D2pVgnnEAgA7HCiHntPahjVKOFcApmhdsWqAPVVf5F7gr0RpVJQjRLO4aT3p1ZvROD+81ftJWQiEToWpkIuFlGNEs5lQQAgQC7F/0QGXrWXeDU2iMRBOK8FAQAWQMD+86jXG8f0BQLkUtRQWJdwZgsCACIA7yaMfdj34xRyzIlxIBAAWBOoxlRP1Zg9/GwvNyzydadaJMaHQADg/TEM++5KCZ3wFcQy9BOSV5NRT1hKdnfBnUHeDs/T+i+tL8Jc5BOyUro79NizMQtFZ6rBMCyCIr2x6rFZmBTnRy12vDrp/WkxmOD9YzYc1feJRUDPosmQiSZe5MqoN+EPK3ehobKNt+/lzHvgE+RBrXY8D7EAQC2T4C8xQQ576M3xIRNSHABw6ociQXEAwL/f/YVa7EQQCAD8PiIAQQrZqF9Xq5TjIe3EHWqU5tTa3Fd2oZ5a7EQRCABsSxz9sO/u1IntmPtpbSdbemsoYjehBLLc3xOz1K6jdr0FPu5I93Kb0BUyfVkspDKJ4L4VD86gFjuRBAIAHySPXo9/LYR1XT2VeGHPOkRP6fPhAsO98MAbyxCa6H9NN9ZD+3Kw5bFvkLnz5KDHXjhahj0bD6DwdBUAoL25G9ueyMDWxzNQU9I85Hs6fF1qjKsC6zVe+Ky6+Yqu82SYPwId4NM4IyExvnj6w9tQW9oCk8GEoCgf6soB5B0pw7msYjTXdGDJhqk2j2MZFm8+8CUA4MDn2die/SgA4MyPlwAAN65LRmC4l3NYEADYmjDpiqJOLhIxXo8LvuYaREComsTRDw9fc5aGV+Agw2yRCBGpGgBA3PQQ3m65cugd7Zh82UAtk+BP0Rq8UFA1ovPfS5wEytUdPQw6I/Q9RkikYihdx99kq2mQ7yCIRMBzu9agq00HlYd5jZCuyzCi
+e0kPfJ4No94E0RDTxfXdRgRH+yBlbviwbvR8RADeKatHZc/wHjTOVYlfB3mPWuEyJgZZe7J7S9JikwGJTIwb16UMev7FY+WoKGjglhcLpM6LgG+w/Um89uZuHM/IR3+1syYWCTdoERTZZymyfypBXVkLr06uvzkWbmoX3nWrLjUi7+cyzvEzV8RD5a7gjMlPfV+E8vx61Fe0Qt9thEQmhnegO4KjfJCUHoYZy+OGXZ45hy6jpqQZC+5KQ3tTNzLeO46u1h54azyw7LfTIFdKcfF4BU5+WwCD3oiAMC8s3TCV927VxU04mVmA+vJWQCSCv1aNGbfEwjeEH9Xzm+QJg86Eb7YdQ1N1O9y9XDBzZTwn0+ByTi3aGrvg4q5A9JQgSCS223dzbQeO/DMX5fkNkEjFCEsKwE13pEIqk0DaWNmG7z88PaxCefidFSO0BFrcfOrSsM4Z7WW0IpEIGe8dR2dLD29faII/wpPtr2vZ+kQGejr0vO1NNe1Y83S6fSfzixx89fZR3vank27j/P3vd39B+UX+nEdESqCgQPKOlGHv64e4wxEfFaYtiUFLXQc+3XgA57KKBSwJUFXUiKqiRpzILMDBL85jwytL4BM09HBy5vunUHiqEuX5Dfjl6wucfUWnK5E4Owxfbv6Zs/38wct4btca698HPs/Gno0HeNfO2H4c9728CNOWxnC2F5yowOOztsFoMFm3/fjJWTz+3irEzzBPLXz59lFcOFqGsKQAvPDpOpsGIOdwKbY9kQGDrm+ZxqnvC3Fw73m88Ok6iG99cjb8Jg39Qwdz1iYjec7IGu0yP49hhX1XBagx2cNldAUiFtkMl+Ycumz33OriJkFxAEDez2VDsj4D8Qp050SsAMArQHiMLbPxrS8XN/4wyWRg0FzTjpdWfyIoDiEunanGK7d/Jth52MKS+vLL1xfgr1Xj/teWYvUTNwAACk9X4cvNPyNlbjge+OsyLLgzDQBQfK4aBScrAQCleXVW
+cVx/Sxwe3bYSv/vbzQiJ9QVjYrDjuUzUlbVw7llZ2AipQoLfvLoEv319qbW8tj+ZYR1+efq62i1LAOjp0OPtB7+CQWfEwrunYNOPG/DHf/0amghv1Je34ou/HjY76b95dcnQPHqxCGufSb+iBvrhMEK1jsoMjp8pfN3LdmaxLT2fLaqKGnkVOZCyvDretukDekeLlRumWeRt+uGj0/jL2s/Q1aYb1qXam7ux4/nMYZepv1aNP39zF6Yujsbie6+Dv1YNAIidHoKH3l6OKQujsOaZdMgU5jkei4X8eos5fSYsKQD3vbwIibNCkTY/Ek/tvNU6H5S15xynXIKifPB61v2YtjQG1y2KxpreNtndoUfhqUpukdgpykP7cqzPfttTs+Hp5wpNpDfWPT/X2mFKLQ+XMjcc2T+V2C2ENc/MgUxxZX59tEqB+yf54O/ljXaPeylKA7WNCbPRiA55+rmitb6Ts73wVBWMehOkcuH7lpyvsXvdwlNV1oYhJL5uAeuTOi/CIe9YUdAgqCNtgj/kShlqSprQ3tRt0xqW5tYNa95FE8H1Ez39XFFX1oKwpIA+f4sFXNwUMOi6oFDJrFYLAJLncH1alYcCEZM1KDhRgYaKtl7rb96njfezCg0AIidrrP9vtJHHxh1FwGrhAKCrTYdNd++FUWf2xTuazeXS1tjVF+a9588L7Uei/N1w0x2po1J5b8aF2P2ur49Miv+Ncuwa97T5kbxtum4D8o4KD5VYFig6bT8KV3S60ua+s/v5wxyZQsppQI5k5cMzsfHbe/D7Pevx9Ae34uXMe7HqsVk2jz/1Q+Gwrq/r0vOCIQDQ3a7jbTOHWs0dbU+n+TyJlN8e1H6unPNEveZgYEcjkUo4Q+ihDLP7R7b0PQZU5DegurgJVUWN0OuMCE3wR+INoX1hXle1Esvun4b//P2E4EU3/N/iUasslUSMTbFBeDivQnD/OwkhDm8w0VOCcOCzbEE/QShCV3K+Bm2NXXav
+eTarGHcyLMQClZR/gv+uKXPDBRvGaOLiJsej236FiBRuhyNXSrFkw1RU5DfgRGYB77ziczVXdF+hRRQsy8KyusKoNzvYSjc5utp0PGtuic6ZjzFH45jecweWWX1Fq/X/g0USAUDc2zm7uJt9t5AYXzy3e63wsZxe5pGZULjIBBtTzNTRnah7SOsHrZLvXCa5KbFe4+VwgcRMCxmWH1I6iH9iMdUlAg2LMTGoFBjyXLcoyqHv6K1xx3O71/LE0Z8Fd6UJbq8ra3HoasaeTnPvHXe9Oep08rsCNNd2cELdFfnmMku90dxhWZ7HIi5r1O+do9ZhWdQU4WUWJiPbL9hhtjixU81t4HJunc30E55DcedL87HjWa6Tdt8rix1SSDuTtVh4ooiz7aMxyrfy8FEhZmqwNZpi7Tmza9DZ2gNXT+4nVQceF54cCKlcYnUKrZGgc9WITNMMGHpVQdfNn/+Jne5YS3nDqkSebzCQ0AR/KN3kvOhcV5sO3Z16zlyKEPre9+oZMBFnuZ6+h/uVm+52fe9w1vzvqsdm4fQPRWhv6sZ/L/0Qc9YmQ99jxJF/5ppD26kaTF8WCwBobei0iue1u7+AT7AH8o9XoKXOLKwNryy2WgdLeVuGURZrAQA7X/gOC+5MQ/ptSfjX5p+h6zLgDyt3If3WJHj4qtDVpkPRmSokzNTyU02mLYmBJrKvUG9cn+KwNOsFPu6Y590XhrstUI0pHmP30YeBjqGllxoYrDDqTcg9UsrZNmdNEmavThRwcEt5284dKBFsmEJzGqOJyWga0njcR6B+WYYddMba0vAkUjFcPbgdiqtaKThT7+7tAolUDEXvcml/rRpP7FiNSXF+MBkZZH16ziqOGcvj8dT7q/vqKz0cwdHmCdWiM1U49s1FtNR1ICwpAL9742YkpYf1ey4FJFIxVL3PpXJXYM5a8+ehKvIbcDKzAFK5BM/vXmt18g/ty0HG9uPI2nMO5Rfroes2CKea3L9pKf50
+6ycAgPW9IS9HsTM5FBE/mQtkyxh/NsiWOb50phozV8T3WYAzfAsQHOML70B+w7p4vAKdLT1wVSvt+h/X3xLn8PdjTEMbIglF7URiwegxj7XPzMGvHpkFqYJ7jQffugVGvQlyFynHmX5x7+1gjCyU/eZu4qaH4MV/3I7S3Do0VLZCppBCG+8Htb/bAIuYgBtWJaClvhMttR3Q9xjhFeAmOI+39ul0rHxoBuT9XIY7XpyHmcvjoOvNBrGEjJ/9eA0q8htQX94KhmHg4aOCv9Yc6RQUSHC0DyInaxCeHDjkFJSREu4ix3wfd3jLJPAb4x+9iUgJhIePiud8F53lRqtKc/nzF75BHnBVK+HiJudEVViGRcHJSqQtiLQOMaov8T9gkTTbeVL32Sv4iRelm5zT2PuHaYXCzPasZmii/5BCy2o/V2uEa7jPZUliHEhIrC9CYn3tO+n9efbjNdYJmGEUNdiG4mEX8tdTIrDrKn0ATijcW32pyZwTZGPYFBTpY7UQQs5+cXY1JyrWPyUCMGelBoR5gXB+RjXGyJSdhm7vI2C7hvfJHxeJGIqr9G3daBvROYsf0tnag/wBDnr/VJtIgR6p/5yHUJrHtCUx1PKuRYEYj30EsAyMB7eMmwKItRHuLc6usUagBoY7+0/uTb6JPxNeV9aCht7YfNGZqiFZLWKCC8RUmAWm3jz7aio+AqaucFwUgIePSnCYZJk1ry1t4Vud6/qsTkCYl+DqNEtcfeD55nTqQGp515RAGBOMB7dyNhn2vzFuCiE5ne//tNR1oLW+EzUl3OFiVFoQ3L25jmb0FP4wraGyDVVFjTzrk5QexskjIq4BgRiPfQRW185115suw1Swf1wUgq1w7743DluHWhYSBaJPMdP4AjmbVSy4zob8j/HFFcdV2a4mGM/sFRbOoa2QRM0FxM7dY0akBMLDV4W2Bm6491hGPu9YoTBkytxwSGUSTrTqgo2kR0tqBXGNWBBD1pu2xaPrgPGX
+D8ZFQUyZP3helFQuQVQa39ooXeWIStMMev6kOD/e8IyYwAJhqnPBlJ6wP/w6uw9sd4vTF0T0dYN/SzhxVqhgMicAREweXCCWnCLiGhGI4cBbQ/NRxkHYN2bq4ImDQr6G1fmeHTbo+UnpodTirhWBmC58B7a5fGjHXjoEpr7IqQvCw1clOHzqj73FTZGTNXaHTyoPBTQRQ/vGla0kQ1u/VMEwwrki/Rco2e3ADPz7GfUmsPTbPSMUiMkAw+HtwzrFmPU3py8Me8tfFS4ym3k8Vgd8um0HfNqSGAx1qbleZ7IhBNaGoISFYNCbhna/HqOAGAGQQEb2AzqGw9tgyv5q2DeTLXwWkuh5TlsYui7z0kuIuJmsDMNaMzzt0dbYhdrSFs43mFjW3PNPivWzrsMejJqSZnS0dFtXJlpqKCTWV9AHam/qRm1pM0QikfW5GYaFd6D7kJYqVBQ0QNdpsK7VZllALBFBG+/v8BWPE04gbFsNdLvvHdnNFG5Q3Pd536p5gphoQ6yhOuaC4tJ1mPO1CGIiCoSpyQNTcfaKbmg8/Q+wnY1U8sTEE4jhh02jclPDgc1U8sTEEogp9z9g22tH5aZM6XEw1TlU+sQEEQhjhOHgu6N6Y0PWW1T6xMQQiOHglitbuCzksLdUwJT3LdUAMb4FwrbVOKwhGw5vB0x6qgVi/ArE8ONrjru7UQfDkR1UC8T4FIjp4vdgqvMc+gCmnK/BVOdSTRBOie0FUyYDTDnfQOTmC4f+1idjgCnvW4g1iVQbhNMxolwsgqAhFkEQJBCCIIEQBAmEIEggBEECIQgSCEGQQAiCBEIQJBCCIIEQBEECIQgSCEGQQAiCBEIQJBCCIIEQBAmEIEggBEECIQgSCEEQJBCCIIEQBAmEIMaO/x8Asbo0ny2yBHcAAAAASUVORK5CYII=</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>e239ed1a-1786-47ff-a3c5-4dc197788026</rd:ReportID>
+</Report>
