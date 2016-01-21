@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Daily stats</Value>
+                <Value>Zones</Value>
                 <Style>
                   <FontFamily>Tahoma</FontFamily>
                   <FontSize>20pt</FontSize>
@@ -88,14 +88,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="home_name">
+                    <Textbox Name="name_home">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!home_name.Value</Value>
+                              <Value>=Fields!name_home.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                               </Style>
@@ -104,7 +104,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>home_name</rd:DefaultName>
+                      <rd:DefaultName>name_home</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -206,6 +206,11 @@
                   <GroupExpression>=Fields!id_ref_area_group.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!name.Value</Value>
+                </SortExpression>
+              </SortExpressions>
               <TablixHeader>
                 <Size>0.21in</Size>
                 <CellContents>
@@ -264,6 +269,11 @@
                   <GroupExpression>=Fields!msisdn.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!msisdn.Value</Value>
+                </SortExpression>
+              </SortExpressions>
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
@@ -418,21 +428,25 @@
         <CommandText>select 
 	t.msisdn, 
 	t.id_ref_area_group, 
-	t.id_ref_area_group_home,
-	agh.name home_name, 
+	ha.id_ref_area_group id_ref_area_group_home,
+	agh.name name_home,
 	ag.name,
 	t.accessing_count
 from 
-	rep_03 t,
-	ref_area_group ag,
-	ref_area_group agh
+	rep_03 t
+	left join rep_03_home_area ha
+	on ha.msisdn = t.msisdn
+		and ha.year = t.year
+		and ha.month = t.month
+	left join ref_area_group agh
+	on agh.id = ha.id_ref_area_group,
+	ref_area_group ag
 where
 	t.id_ref_area_group = ag.id
 	and t.month = @PMonth
 	and t.year = @PYear
 	and t.msisdn = isNull(@PMSISDN, t.msisdn)
-	and t.id_ref_area_group_home = agh.id
-order by t.msisdn</CommandText>
+</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -448,8 +462,8 @@ order by t.msisdn</CommandText>
           <DataField>id_ref_area_group_home</DataField>
           <rd:TypeName>System.Int64</rd:TypeName>
         </Field>
-        <Field Name="home_name">
-          <DataField>home_name</DataField>
+        <Field Name="name_home">
+          <DataField>name_home</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="name">
