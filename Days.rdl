@@ -1873,7 +1873,7 @@
     <DataSet Name="DSWin">
       <Query>
         <DataSourceName>DS_VLR</DataSourceName>
-        <CommandText>select * from rep_02_t
+        <CommandText>select * from rep_02
 where id_ref_operator = 1</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
@@ -1917,7 +1917,7 @@ where id_ref_operator = 2</CommandText>
       <Query>
         <DataSourceName>DS_VLR</DataSourceName>
         <CommandText>select * from rep_02
-where id_ref_operator = 3</CommandText>
+where id_ref_operator = 7</CommandText>
       </Query>
       <Fields>
         <Field Name="id_ref_operator">
@@ -1938,7 +1938,7 @@ where id_ref_operator = 3</CommandText>
       <Query>
         <DataSourceName>DS_VLR</DataSourceName>
         <CommandText>select * from rep_02
-where id_ref_operator = 5</CommandText>
+where id_ref_operator = 8</CommandText>
       </Query>
       <Fields>
         <Field Name="id_ref_operator">

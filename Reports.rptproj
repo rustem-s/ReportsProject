@@ -26,18 +26,6 @@
       <FullPath>MonthlyStats.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Subscribers by Months Other.rdl</Name>
-      <FullPath>Subscribers by Months Other.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SubscribersByDays.rdl</Name>
-      <FullPath>SubscribersByDays.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SubscribersByMonths.rdl</Name>
-      <FullPath>SubscribersByMonths.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
       <Name>Zones.rdl</Name>
       <FullPath>Zones.rdl</FullPath>
     </ProjectItem>
