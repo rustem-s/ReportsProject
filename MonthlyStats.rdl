@@ -1236,20 +1236,32 @@ where
     <DataSet Name="DSTotal">
       <Query>
         <DataSourceName>DS_VLR</DataSourceName>
-        <CommandText>select msisdn_count
+        <CommandText>with max_year(id_ref_year) as
+(	select max(id_ref_year)
+	from rep_01_total_by_month
+),
+max_month(id_ref_month) as
+(
+	select max(id_ref_month)
+	from rep_01_total_by_month
+	where id_ref_year =
+	(
+		select id_ref_year from max_year
+	)
+)
+select msisdn_count
 from rep_01_total_by_month
 where 
 id_ref_year =
 (
-	select max(id_ref_year)
-	from rep_01_total_by_month
+	select id_ref_year from max_year
 
 )
 and id_ref_month = 
 (
-	select max(id_ref_month)
-	from rep_01_total_by_month
-)</CommandText>
+	select id_ref_month	from max_month
+)
+</CommandText>
       </Query>
       <Fields>
         <Field Name="msisdn_count">
